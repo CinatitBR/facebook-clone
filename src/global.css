@@ -1,3 +1,11 @@
+:root {
+  --gray-1: #18191a;
+  --gray-2: #242526;
+  --gray-3: #242526;
+  --gray-4: #303031;
+  --gray-5: #4e4f50;
+}
+
 html {
   font-size: 12px;
 }
@@ -10,4 +18,5 @@ html {
 
 body {
   font-family: 'Open Sans', sans-serif;
+  background-color: var(--gray-1);
 }
