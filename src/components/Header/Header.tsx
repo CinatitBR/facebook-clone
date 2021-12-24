@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import LinkList from '../LinkList/LinkList'
 import LinkItem from '../LinkItem/LinkItem'
+import { ReactComponent as SearchIcon } from '../../assets/search-icon.svg'
 import { ReactComponent as FacebookIcon } from '../../assets/facebook-icon.svg'
 import { ReactComponent as HomeIcon } from '../../assets/home-icon.svg'
 import { ReactComponent as FriendsIcon } from '../../assets/friends-icon.svg'
@@ -14,17 +15,15 @@ import { ReactComponent as SortDownIcon } from '../../assets/sort-down-icon.svg'
 
 import style from './Header.module.css'
 
-// const LinkItem = ({ children, className, selected } : { children: React.ReactNode, selected?: boolean, className?: string }) => (
-//   <li className={classNames(style.link, className, {[style.selected]: selected})}>
-//     <a href="#">{children}</a>
-//   </li> 
-// )
-
 const Header = () => <header className={style.container}>
   <div className={style.leftWrapper}>
     <FacebookIcon className={style.brandIcon} />
 
-    <input type="text" className={style.searchBar} placeholder="Search Facebook" />
+    <label className={style.searchBar}>
+      <SearchIcon />
+
+      <input type="text" placeholder="Search Facebook" />
+    </label>
   </div>
 
   <div className={style.centerWrapper}>

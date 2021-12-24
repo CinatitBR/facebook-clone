@@ -74,14 +74,33 @@
   border-radius: 50px;
   border: none;
   outline: none;
-  padding: 8px;
+  padding: 0px 12px;
 
   color: var(--primary-text);
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.searchBar svg {
+  fill: var(--secondary-icon);
+}
+
+.searchBar input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+
+  color: currentColor;
   font-size: .9375rem;
 }
 
-.searchBar::placeholder {
-  color: #b0b3b8;
+.searchBar input::placeholder {
+  color: var(--secondary-icon);
 }
 
 /* Right wrapper */
