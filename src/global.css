@@ -2,12 +2,20 @@
   --gray-1: #18191a;
   --gray-2: #242526;
   --gray-3: #242526;
-  --gray-4: #303031;
-  --gray-5: #4e4f50;
+  --secondary-button-background: #ffffff1a;
+  --gray-5: #303031;
+  --gray-6: #4e4f50;
+
+  --blue-1: #2374e1;
+
+  --primary-text: #e4e6eb;
+
+  --primary-icon: #e4e6eb;
+  --secondary-icon: #b0b3b8;
 }
 
 html {
-  font-size: 12px;
+  font-size: 16px;
 }
 
 * {
@@ -19,4 +27,18 @@ html {
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: var(--gray-1);
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: row;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
