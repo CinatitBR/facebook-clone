@@ -90,9 +90,6 @@
 }
 
 .searchBar input {
-  width: 100%;
-  border: none;
-  outline: none;
   background-color: transparent;
 
   color: currentColor;
