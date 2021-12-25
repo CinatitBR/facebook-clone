@@ -1,11 +1,15 @@
-import style from './LinkList.module.css'
+import { Container } from './LinkList.styles'
 
-interface Props {
-  children: React.ReactNode
+export interface Props {
+  children: React.ReactNode,
+  column?: boolean
 }
 
-const LinkList = ({ children } : Props) => <div className={style.container}>
-  {children}
-</div>
+const LinkList = ({ children, column } : Props) => (
+  <Container column={column}>
+    {children}
+  </Container>
+) 
+
 
 export default LinkList

@@ -7,6 +7,7 @@
   --gray-6: #4e4f50;
 
   --blue-1: #2374e1;
+  --accent: #2e89ff;
 
   --primary-text: #e4e6eb;
 
@@ -26,7 +27,9 @@ html {
 
 body {
   font-family: 'Open Sans', sans-serif;
+  font-size: .9375rem;
   color: var(--primary-text);
+
   background-color: var(--gray-1);
 }
 

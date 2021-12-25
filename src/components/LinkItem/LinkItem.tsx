@@ -1,13 +1,14 @@
-import classNames from 'classnames'
+import { Container } from './LinkItem.styles'
 
-import style from './LinkItem.module.css'
+export interface Props {
+  children: React.ReactNode, 
+  className?: string,
+}
 
-const LinkItem = (
-  { children, className } : 
-  { children: React.ReactNode, className?: string }) => (
-  <a href="#" className={classNames(style.container, className)}>
+const LinkItem = ({ children, className } : Props) => (
+  <Container href="#" className={className}>
     {children}
-  </a>
+  </Container>
 )
 
 export default LinkItem
