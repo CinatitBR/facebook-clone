@@ -5,6 +5,10 @@ export const LeftNavigation = styled.aside`
   width: min(300px, 100%);
   padding: 16px 8px;
 
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
   .iconWrapper {
     width: 36px;
     height: 36px;
@@ -28,5 +32,11 @@ export const LeftNavigation = styled.aside`
     background-image: url(${profilePic});
     background-size: cover;
     background-position: center;
+  }
+
+  .groupIcon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
   }
 `
