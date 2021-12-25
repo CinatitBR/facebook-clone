@@ -1,9 +1,25 @@
 import styled from 'styled-components'
 import profilePic from './assets/profile-pic.jpg'
 
+export const Container = styled.main`
+  height: 100vh;
+  width: 100vw;
+
+  .mainContent {
+    padding: 16px 8px;
+
+    display: flex;
+    flex-direction: row;
+  }
+
+  .feed {
+    width: min(740px, 100%);
+    padding: 0 32px;
+  }
+`
+
 export const LeftNavigation = styled.aside`
   width: min(300px, 100%);
-  padding: 16px 8px;
 
   display: flex;
   flex-direction: column;

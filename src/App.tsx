@@ -13,94 +13,101 @@ import group2Img from './assets/group-2.png'
 import group3Img from './assets/group-3.png'
 import group4Img from './assets/group-4.jpg'
 import group5Img from './assets/group-5.jpg'
+import PostInput from './components/PostInput/PostInput'
 
+import { Container, LeftNavigation } from './App.styles'
 
-import { LeftNavigation } from './App.styles'
-
-const App = () => {
-  return <div className="App">
+const App = () => (
+  <Container>
     <Header />
 
-    <LeftNavigation>
-      <NavSection divider>
-        <LinkList column={true}>
-          <LinkNavigation 
-            icon={
-              <span className="profilePic">
-              </span>
-            }
-            title="Jacinto Silva"
-          />
+    <div className="mainContent">
+      <LeftNavigation>
+        <NavSection divider>
+          <LinkList column={true}>
+            <LinkNavigation 
+              icon={
+                <span className="profilePic">
+                </span>
+              }
+              title="Jacinto Silva"
+            />
 
-          <LinkNavigation 
-            icon={<img src={FriendsImg} alt="Friends icon" />}
-            title="Find Friends"
-          />
+            <LinkNavigation 
+              icon={<img src={FriendsImg} alt="Friends icon" />}
+              title="Find Friends"
+            />
 
-          <LinkNavigation 
-            icon={<img src={GroupsImg} alt="Groups icon" />}
-            title="Groups"
-            description="1 new"
-          />
+            <LinkNavigation 
+              icon={<img src={GroupsImg} alt="Groups icon" />}
+              title="Groups"
+              description="1 new"
+            />
 
-          <LinkNavigation 
-            icon={<img src={MarketplaceImg} alt="Marketplace icon" />}
-            title="Marketplace"
-            description="1 new"
-          />
+            <LinkNavigation 
+              icon={<img src={MarketplaceImg} alt="Marketplace icon" />}
+              title="Marketplace"
+              description="1 new"
+            />
 
-          <LinkNavigation 
-            icon={<img src={WatchImg} alt="Watch icon" />}
-            title="Watch"
-            description="9+ new videos"
-          />
+            <LinkNavigation 
+              icon={<img src={WatchImg} alt="Watch icon" />}
+              title="Watch"
+              description="9+ new videos"
+            />
 
-          <LinkNavigation 
-            icon={<img src={MemoriesImg} alt="Memories icon" />}
-            title="Memories"
-          />
+            <LinkNavigation 
+              icon={<img src={MemoriesImg} alt="Memories icon" />}
+              title="Memories"
+            />
 
-          <LinkNavigation 
-            icon={
-              <span className="iconWrapper">
-                <ChevronIcon />
-              </span>
-            }
-            title="See more"
-          />
-        </LinkList>
-      </NavSection>
+            <LinkNavigation 
+              icon={
+                <span className="iconWrapper">
+                  <ChevronIcon />
+                </span>
+              }
+              title="See more"
+            />
+          </LinkList>
+        </NavSection>
 
-      <NavSection title="Your Shortcuts">
-        <LinkList column>
-          <LinkNavigation
-            icon={<img className="groupIcon" src={group1Img} alt="Group" />}
-            title="Minecraft"
-          /> 
+        <NavSection title="Your Shortcuts">
+          <LinkList column>
+            <LinkNavigation
+              icon={<img className="groupIcon" src={group1Img} alt="Group" />}
+              title="Minecraft"
+            /> 
 
-          <LinkNavigation
-            icon={<img className="groupIcon" src={group2Img} alt="Group" />}
-            title="Agar.io"
-          />
+            <LinkNavigation
+              icon={<img className="groupIcon" src={group2Img} alt="Group" />}
+              title="Agar.io"
+            />
 
-          <LinkNavigation
-            icon={<img className="groupIcon" src={group3Img} alt="Group" />}
-            title="Candy Crush"
-          />
+            <LinkNavigation
+              icon={<img className="groupIcon" src={group3Img} alt="Group" />}
+              title="Candy Crush"
+            />
 
-          <LinkNavigation
-            icon={<img className="groupIcon" src={group4Img} alt="Group" />}
-            title="Dragon City"
-          /> 
+            <LinkNavigation
+              icon={<img className="groupIcon" src={group4Img} alt="Group" />}
+              title="Dragon City"
+            /> 
 
-          <LinkNavigation
-            icon={<img className="groupIcon" src={group5Img} alt="Group" />}
-            title="N.W.A"
-          />  
-        </LinkList>
-      </NavSection>
-    </LeftNavigation>
-  </div>
-}
+            <LinkNavigation
+              icon={<img className="groupIcon" src={group5Img} alt="Group" />}
+              title="N.W.A"
+            />  
+          </LinkList>
+        </NavSection>
+      </LeftNavigation>
+
+      <section className="feed">
+        <PostInput />
+      </section>
+    </div>
+
+  </Container>
+)
 
 export default App
