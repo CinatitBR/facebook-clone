@@ -12,6 +12,8 @@
 
   --blue-1: #2374e1;
   --accent: #2e89ff;
+  --blue-link: #4599ff;
+  --primary-deemphasized-button-background: #2d88ff33;
 
   --primary-text: #e4e6eb;
   --secondary-text: #b0b3b8;
@@ -20,6 +22,8 @@
 
   --divider: #3e4042;
   --shadow-2: #00000033;
+
+  --filter-primary-icon: invert(0.89) sepia(0.06) hue-rotate(185deg);
 }
 
 html {
@@ -61,8 +65,15 @@ input {
 }
 
 button {
-  background-color: transparent;
   border: none;
   cursor: pointer;
   color: inherit;
+  
+  background-color: transparent;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: var(--secondary-button-background);
 }
