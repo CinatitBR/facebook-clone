@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { Props } from './LinkItem'
 
 export const Container = styled.a<Props>`
-  height: 100%;
   border-radius: 8px;
   transition: background-color 0.2s ease;
 
