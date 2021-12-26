@@ -28,7 +28,7 @@ const Header = () => <header className={style.container}>
 
   <div className={style.centerWrapper}>
 
-    <LinkList>
+    <LinkList className={style.linkList}>
       <LinkItem className={classNames(style.link, style.selected)}>
         <HomeIcon />
       </LinkItem>
@@ -53,7 +53,7 @@ const Header = () => <header className={style.container}>
   </div>
 
   <div className={style.rightWrapper}>
-    <LinkList>
+    <LinkList className={style.linkList}>
       <LinkItem className={style.accountWrapper}>
         <div className={style.profilePic}></div> Jacinto
       </LinkItem>
