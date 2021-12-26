@@ -22,6 +22,9 @@ import profilePic2 from './assets/profile-pic-2.jpg'
 import { IconWrapper } from './components/Icons/Icons'
 import plusIcon from './assets/plus-icon.png'
 import createRoomIcon from './assets/create-room-icon.png'
+import PostUser from './components/PostUser/PostUser'
+import profilePic3 from './assets/profile-pic-3.jpg'
+import postImage1 from './assets/post-image-1.jpg'
 
 import { Container, SideNavigation } from './App.styles'
 
@@ -30,6 +33,7 @@ const App = () => (
     <Header />
 
     <div className="mainContent">
+      {/* Left Navigation */}
       <SideNavigation>
         <NavSection divider>
           <LinkNavigation 
@@ -111,8 +115,18 @@ const App = () => (
             <img src={createRoomIcon} alt="Create room" /> Create room
           </button>
         </PostWrapper>
-      </section>
 
+        <PostUser 
+          creator="UFC"
+          profileImageSrc={profilePic3}
+          createdAt="Yesterday at 8:20 PM"
+          text="Se você pudessse pedir uma luta de presente de Natal, qual seria?"
+          postImageSrc={postImage1}
+          verified
+        />
+      </section>
+      
+      {/* Right Navigation */}
       <SideNavigation>
         <NavSection title="Sponsored" divider>
           <LinkNavigation
