@@ -2,11 +2,11 @@ import { Container } from './LinkList.styles'
 
 export interface Props {
   children: React.ReactNode,
-  column?: boolean
+  direction?: 'column' | 'row'
 }
 
-const LinkList = ({ children, column } : Props) => (
-  <Container column={column}>
+const LinkList = ({ children, direction = 'row' } : Props) => (
+  <Container direction={direction}>
     {children}
   </Container>
 ) 
