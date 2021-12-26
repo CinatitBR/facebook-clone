@@ -26,7 +26,15 @@ import PostUser from './components/PostUser/PostUser'
 import profilePic3 from './assets/profile-pic-3.jpg'
 import postImage1 from './assets/post-image-1.jpg'
 
-import { Container, SideNavigation, Feed, CreateRoomButton, MainContent } from './App.styles'
+import { 
+  Container, 
+  SideNavigation, 
+  Feed, 
+  CreateRoomButton, 
+  MainContent, 
+  GroupIcon, 
+  AdsImage 
+} from './App.styles'
 
 const App = () => (
   <Container>
@@ -81,27 +89,27 @@ const App = () => (
 
         <NavSection title="Your Shortcuts">
           <LinkNavigation
-            icon={<img className="groupIcon" src={group1Img} alt="Group" />}
+            icon={<GroupIcon src={group1Img} alt="Group" />}
             title="Minecraft"
           /> 
 
           <LinkNavigation
-            icon={<img className="groupIcon" src={group2Img} alt="Group" />}
+            icon={<GroupIcon src={group2Img} alt="Group" />}
             title="Agar.io"
           />
 
           <LinkNavigation
-            icon={<img className="groupIcon" src={group3Img} alt="Group" />}
+            icon={<GroupIcon src={group3Img} alt="Group" />}
             title="Candy Crush"
           />
 
           <LinkNavigation
-            icon={<img className="groupIcon" src={group4Img} alt="Group" />}
+            icon={<GroupIcon src={group4Img} alt="Group" />}
             title="Dragon City"
           /> 
 
           <LinkNavigation
-            icon={<img className="groupIcon" src={group5Img} alt="Group" />}
+            icon={<GroupIcon src={group5Img} alt="Group" />}
             title="N.W.A"
           />  
         </NavSection>
@@ -130,13 +138,13 @@ const App = () => (
       <SideNavigation>  
         <NavSection title="Sponsored" divider>
           <LinkNavigation
-            icon={<img src={ads1Img} alt="Ads" className="imgAds" />}
+            icon={<AdsImage src={ads1Img} alt="Ads" />}
             title="Scale up for success"
             description="upwork.com"
           />
 
           <LinkNavigation
-            icon={<img src={ads2Img} alt="Ads" className="imgAds" />}
+            icon={<AdsImage src={ads2Img} alt="Ads" />}
             title="Elite Software engineer Wanted"
             description="developers.turing.com"
           />

@@ -1,33 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.main`
-  .chevronIconWrapper {
-    width: 36px;
-    height: 36px;
-    background-color: var(--secondary-button-background);
-    border-radius: 50%;
-
-    display: grid;
-    place-items: center;
-  }
-  
-  .chevronIconWrapper svg {
-    fill: var(--primary-text);
-    width: 20px;
-    height: 20px;
-  }
-
-  .groupIcon {
-    width: 36px;
-    height: 36px;
-    border-radius: 8px;
-  }
-
-  .imgAds {
-    max-width: 125px;
-    border-radius: 8px;
-  }
-`
+export const Container = styled.main``
 
 export const MainContent = styled.section`
   margin-top: var(--header-height);
@@ -38,6 +11,18 @@ export const MainContent = styled.section`
   align-items: flex-start;
 
   position: relative;
+`
+
+export const SideNavigation = styled.aside`
+  width: min(300px, 100%);
+  padding: 16px 8px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  position: sticky;
+  top: var(--header-height);
 `
 
 export const Feed = styled.section`
@@ -65,14 +50,13 @@ export const CreateRoomButton = styled.button`
   gap: 8px;
 `
 
-export const SideNavigation = styled.aside`
-  width: min(300px, 100%);
-  padding: 16px 8px;
+export const GroupIcon = styled.img`
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+`
 
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-
-  position: sticky;
-  top: var(--header-height);
+export const AdsImage = styled.img`
+  max-width: 125px;
+  border-radius: 8px;
 `

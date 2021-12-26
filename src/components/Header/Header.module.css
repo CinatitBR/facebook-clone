@@ -2,6 +2,7 @@
   height: var(--header-height);
   background-color: var(--gray-2);
   padding: 4px 16px;
+  border-bottom: solid 1px var(--divider);
 
   display: flex;
   flex-direction: row;
