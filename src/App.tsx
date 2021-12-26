@@ -26,13 +26,13 @@ import PostUser from './components/PostUser/PostUser'
 import profilePic3 from './assets/profile-pic-3.jpg'
 import postImage1 from './assets/post-image-1.jpg'
 
-import { Container, SideNavigation } from './App.styles'
+import { Container, SideNavigation, Feed, CreateRoomButton, MainContent } from './App.styles'
 
 const App = () => (
   <Container>
     <Header />
 
-    <div className="mainContent">
+    <MainContent>
       {/* Left Navigation */}
       <SideNavigation>
         <NavSection divider>
@@ -71,9 +71,9 @@ const App = () => (
 
           <LinkNavigation 
             icon={
-              <span className="chevronIconWrapper">
+              <IconWrapper iconSize={20}>
                 <ChevronIcon />
-              </span>
+              </IconWrapper>
             }
             title="See more"
           />
@@ -107,13 +107,13 @@ const App = () => (
         </NavSection>
       </SideNavigation>
 
-      <section className="feed">
+      <Feed>
         <PostInput />
 
         <PostWrapper>
-          <button className="createRoomButton">
+          <CreateRoomButton>
             <img src={createRoomIcon} alt="Create room" /> Create room
-          </button>
+          </CreateRoomButton>
         </PostWrapper>
 
         <PostUser 
@@ -124,10 +124,10 @@ const App = () => (
           postImageSrc={postImage1}
           verified
         />
-      </section>
+      </Feed>
       
       {/* Right Navigation */}
-      <SideNavigation>
+      <SideNavigation>  
         <NavSection title="Sponsored" divider>
           <LinkNavigation
             icon={<img src={ads1Img} alt="Ads" className="imgAds" />}
@@ -142,7 +142,7 @@ const App = () => (
           />
         </NavSection>
 
-        <NavSection title="Contacts">
+        <NavSection title="Contacts"> 
           <LinkNavigation
             icon={
               <ProfileIcon src={profilePic2} online />
@@ -188,7 +188,7 @@ const App = () => (
           />
         </NavSection>
       </SideNavigation>
-    </div>
+    </MainContent>
 
   </Container>
 )
