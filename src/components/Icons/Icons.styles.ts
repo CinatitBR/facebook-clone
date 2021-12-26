@@ -36,9 +36,10 @@ export const ProfileContainer = styled.div`
     bottom: 4px;
   }
 `
+
 export const IconWrapperContainer = styled.div<IconWrapperProps>`
-  width: ${props => `${props.size}px`};
-  height: ${props => `${props.size}px`};
+  width: ${props => `${props.wrapperSize}px`};
+  height: ${props => `${props.wrapperSize}px`};
   border-radius: 50%;
   background-color: ${props => props.backgroundColor};
 
