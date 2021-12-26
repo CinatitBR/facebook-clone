@@ -1,5 +1,6 @@
 :root {
   --gray-1: #18191a;
+  --web-wash: #18191a;
   --gray-2: #242526;
   --background-surface: #242526;
   --secondary-button-background: #ffffff1a;
@@ -8,6 +9,8 @@
   --comment-background: #4e4f50;
   --base-cherry: #f3425f;
   --base-lime: #45bd62;
+  --positive: #31a24c;
+  --positive-background: #1f3520;
   --base-lemon: #f7b928;
 
   --blue-1: #2374e1;

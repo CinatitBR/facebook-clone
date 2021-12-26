@@ -130,28 +130,32 @@ const App = () => (
 
         <NavSection title="Contacts">
           <LinkNavigation
-            icon={<ProfileIcon src={profilePic2} />}
+            icon={
+              <ProfileIcon src={profilePic2} online />
+            }
             title="Jhon Doe"
           />
 
           <LinkNavigation
-            icon={<ProfileIcon src={profilePic2} />}
-            title="Jhon Doe"
+            icon={
+              <ProfileIcon src={profilePic2} lastSeen="2h" />
+            }
+            title="Escaravalho Doe"
           />
 
           <LinkNavigation
-            icon={<ProfileIcon src={profilePic2} />}
-            title="Jhon Doe"
+            icon={<ProfileIcon src={profilePic2} lastSeen="27m" />}
+            title="Frank Sinatra"
           />
 
           <LinkNavigation
-            icon={<ProfileIcon src={profilePic2} />}
-            title="Jhon Doe"
+            icon={<ProfileIcon src={profilePic2} lastSeen="1m" />}
+            title="Loneli Room"
           />
 
           <LinkNavigation
-            icon={<ProfileIcon src={profilePic2} />}
-            title="Jhon Doe"
+            icon={<ProfileIcon src={profilePic2} lastSeen="24m" />}
+            title="Josefina Dias"
           />
         </NavSection>
 

@@ -2,15 +2,30 @@ import { ProfileContainer, IconWrapperContainer } from './Icons.styles'
 
 export interface Props {
   src: string
-  size?: number
+  size?: number,
+  lastSeen?: string,
+  online?: boolean
 }
 
-export const ProfileIcon = ({ src, size = 36 } : Props) => (
-  <ProfileContainer 
-    src={src}
-    alt="Profile pic"
-    size={size}
-  />
+export const ProfileIcon = ({ src, size = 36, lastSeen, online } : Props) => (
+  <ProfileContainer>
+    <img 
+      src={src} 
+      alt="Profile pic" 
+      width={size}
+      height={size}
+    />
+
+    {lastSeen && 
+      <span className="lastSeen">
+        {lastSeen}
+      </span>
+    }
+
+    {online &&
+      <span className="onlineSymbol"></span>
+    }
+  </ProfileContainer>
 )
 
 export interface IconWrapperProps {
