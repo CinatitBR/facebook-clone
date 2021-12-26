@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import profilePic from './assets/profile-pic.jpg'
 
 export const Container = styled.main`
   height: 100vh;
@@ -15,17 +14,13 @@ export const Container = styled.main`
   .feed {
     width: min(740px, 100%);
     padding: 0 32px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
   }
-`
 
-export const LeftNavigation = styled.aside`
-  width: min(300px, 100%);
-
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-
-  .iconWrapper {
+  .chevronIconWrapper {
     width: 36px;
     height: 36px;
     background-color: var(--secondary-button-background);
@@ -35,19 +30,10 @@ export const LeftNavigation = styled.aside`
     place-items: center;
   }
   
-  .iconWrapper svg {
+  .chevronIconWrapper svg {
     fill: var(--primary-text);
     width: 20px;
     height: 20px;
-  }
-
-  .profilePic {
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    background-image: url(${profilePic});
-    background-size: cover;
-    background-position: center;
   }
 
   .groupIcon {
@@ -55,4 +41,33 @@ export const LeftNavigation = styled.aside`
     height: 36px;
     border-radius: 8px;
   }
+
+  .createRoomButton {
+    font-size: .9375rem;
+    color: var(--blue-link);
+    font-weight: 600;
+    
+    height: 40px;
+    padding: 0px 12px;
+    border-radius: 20px;
+    border: 2px solid var(--primary-deemphasized-button-background);
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .imgAds {
+    max-width: 125px;
+    border-radius: 8px;
+  }
+`
+
+export const SideNavigation = styled.aside`
+  width: min(300px, 100%);
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 `
