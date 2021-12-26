@@ -1,9 +1,10 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 import { IconWrapperProps } from './Icons'
 
 export const ProfileContainer = styled.div`
   position: relative;
+  display: inline;
 
   img {
     border-radius: 50%;
@@ -42,7 +43,14 @@ export const IconWrapperContainer = styled.div<IconWrapperProps>`
   height: ${props => `${props.wrapperSize}px`};
   border-radius: 50%;
   background-color: ${props => props.backgroundColor};
+  transition: background-color 0.2s ease;
 
   display: grid;
   place-items: center;
+
+  ${props => props.backgroundColorHover && css`
+    :hover { 
+      background-color: ${props.backgroundColorHover};
+    }
+  `}
 `

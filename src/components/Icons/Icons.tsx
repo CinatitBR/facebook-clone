@@ -1,4 +1,4 @@
-import { cloneElement, HTMLAttributes, ImgHTMLAttributes } from 'react'
+import { cloneElement } from 'react'
 import { ProfileContainer, IconWrapperContainer } from './Icons.styles'
 
 export interface Props {
@@ -34,6 +34,7 @@ export interface IconWrapperProps {
   wrapperSize?: number,
   iconSize?: number
   backgroundColor?: string
+  backgroundColorHover?: string
   className?: string,
 }
 
@@ -42,11 +43,13 @@ export const IconWrapper = ({
   wrapperSize = 36, 
   iconSize = 20,
   backgroundColor = 'var(--secondary-button-background)',
+  backgroundColorHover,
   className
 }: IconWrapperProps) => (
   <IconWrapperContainer 
     wrapperSize={wrapperSize} 
     backgroundColor={backgroundColor}
+    backgroundColorHover={backgroundColorHover}
     className={className} 
   >
     {cloneElement(children, {
