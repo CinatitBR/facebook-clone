@@ -39,9 +39,7 @@ export const Container = styled.article`
 
   .bottom button {
     width: 100%;
-    border-radius: 8px;
     padding: 8px;
-    transition: background-color 0.2s ease;
 
     color: var(--secondary-text);
     font-weight: 600;
@@ -52,10 +50,6 @@ export const Container = styled.article`
     justify-content: center;
     align-items: center;
     gap: 8px;
-  }
-
-  .bottom button:hover {
-    background-color: var(--secondary-button-background);
   }
 
   .bottom button svg {
