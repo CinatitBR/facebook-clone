@@ -1,4 +1,6 @@
 :root {
+  --header-height: 56px;
+
   --gray-1: #18191a;
   --web-wash: #18191a;
   --gray-2: #242526;
@@ -27,6 +29,7 @@
   --shadow-2: #00000033;
 
   --filter-primary-icon: invert(0.89) sepia(0.06) hue-rotate(185deg);
+  --filter-secondary-icon: invert(62%) sepia(98%) saturate(12%) hue-rotate(175deg) brightness(90%) contrast(96%);
 }
 
 html {
