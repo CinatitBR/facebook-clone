@@ -1,19 +1,20 @@
 import styled from 'styled-components'
 
 export const Container = styled.main`
-  height: 100vh;
-  width: 100vw;
-
   .mainContent {
-    padding: 16px 8px;
+    margin-top: var(--header-height);
 
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    position: relative;
   }
 
   .feed {
     width: min(740px, 100%);
-    padding: 0 32px;
+    padding: 16px 32px;
 
     display: flex;
     flex-direction: column;
@@ -66,8 +67,12 @@ export const Container = styled.main`
 
 export const SideNavigation = styled.aside`
   width: min(300px, 100%);
+  padding: 16px 8px;
 
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  position: sticky;
+  top: var(--header-height);
 `
