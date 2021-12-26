@@ -1,4 +1,5 @@
 import { Container } from './NavSection.styles'
+import LinkList from '../LinkList/LinkList'
 
 interface Props {
   children: React.ReactNode
@@ -12,7 +13,9 @@ const NavSection = ({ children, title, divider } : Props) => (
       <header>{title}</header>
     }
 
-    {children}
+    <LinkList direction="column">
+      {children}
+    </LinkList>
 
     {divider && 
       <div className="divider"></div>
