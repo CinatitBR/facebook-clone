@@ -1,4 +1,3 @@
-import LinkList from './components/LinkList/LinkList'
 import LinkNavigation from './components/LinkNavigation/LinkNavigation'
 import Header from './components/Header/Header'
 import NavSection from './components/NavSection/NavSection'
@@ -14,97 +13,163 @@ import group3Img from './assets/group-3.png'
 import group4Img from './assets/group-4.jpg'
 import group5Img from './assets/group-5.jpg'
 import PostInput from './components/PostInput/PostInput'
+import PostWrapper from './components/PostWrapper/PostWrapper'
+import profilePic from './assets/profile-pic.jpg'
+import { ProfileIcon } from './components/Icons/Icons'
+import ads1Img from './assets/ads-1.jpg'
+import ads2Img from './assets/ads-2.jpg'
+import profilePic2 from './assets/profile-pic-2.jpg'
+import { IconWrapper } from './components/Icons/Icons'
+import plusIcon from './assets/plus-icon.png'
+import createRoomIcon from './assets/create-room-icon.png'
 
-import { Container, LeftNavigation } from './App.styles'
+import { Container, SideNavigation } from './App.styles'
 
 const App = () => (
   <Container>
     <Header />
 
     <div className="mainContent">
-      <LeftNavigation>
+      <SideNavigation>
         <NavSection divider>
-          <LinkList column={true}>
-            <LinkNavigation 
-              icon={
-                <span className="profilePic">
-                </span>
-              }
-              title="Jacinto Silva"
-            />
+          <LinkNavigation 
+            icon={<ProfileIcon src={profilePic} />}
+            title="Jacinto Silva"
+          />
 
-            <LinkNavigation 
-              icon={<img src={FriendsImg} alt="Friends icon" />}
-              title="Find Friends"
-            />
+          <LinkNavigation 
+            icon={<img src={FriendsImg} alt="Friends icon" />}
+            title="Find Friends"
+          />
 
-            <LinkNavigation 
-              icon={<img src={GroupsImg} alt="Groups icon" />}
-              title="Groups"
-              description="1 new"
-            />
+          <LinkNavigation 
+            icon={<img src={GroupsImg} alt="Groups icon" />}
+            title="Groups"
+            description="1 new"
+          />
 
-            <LinkNavigation 
-              icon={<img src={MarketplaceImg} alt="Marketplace icon" />}
-              title="Marketplace"
-              description="1 new"
-            />
+          <LinkNavigation 
+            icon={<img src={MarketplaceImg} alt="Marketplace icon" />}
+            title="Marketplace"
+            description="1 new"
+          />
 
-            <LinkNavigation 
-              icon={<img src={WatchImg} alt="Watch icon" />}
-              title="Watch"
-              description="9+ new videos"
-            />
+          <LinkNavigation 
+            icon={<img src={WatchImg} alt="Watch icon" />}
+            title="Watch"
+            description="9+ new videos"
+          />
 
-            <LinkNavigation 
-              icon={<img src={MemoriesImg} alt="Memories icon" />}
-              title="Memories"
-            />
+          <LinkNavigation 
+            icon={<img src={MemoriesImg} alt="Memories icon" />}
+            title="Memories"
+          />
 
-            <LinkNavigation 
-              icon={
-                <span className="iconWrapper">
-                  <ChevronIcon />
-                </span>
-              }
-              title="See more"
-            />
-          </LinkList>
+          <LinkNavigation 
+            icon={
+              <span className="chevronIconWrapper">
+                <ChevronIcon />
+              </span>
+            }
+            title="See more"
+          />
         </NavSection>
 
         <NavSection title="Your Shortcuts">
-          <LinkList column>
-            <LinkNavigation
-              icon={<img className="groupIcon" src={group1Img} alt="Group" />}
-              title="Minecraft"
-            /> 
+          <LinkNavigation
+            icon={<img className="groupIcon" src={group1Img} alt="Group" />}
+            title="Minecraft"
+          /> 
 
-            <LinkNavigation
-              icon={<img className="groupIcon" src={group2Img} alt="Group" />}
-              title="Agar.io"
-            />
+          <LinkNavigation
+            icon={<img className="groupIcon" src={group2Img} alt="Group" />}
+            title="Agar.io"
+          />
 
-            <LinkNavigation
-              icon={<img className="groupIcon" src={group3Img} alt="Group" />}
-              title="Candy Crush"
-            />
+          <LinkNavigation
+            icon={<img className="groupIcon" src={group3Img} alt="Group" />}
+            title="Candy Crush"
+          />
 
-            <LinkNavigation
-              icon={<img className="groupIcon" src={group4Img} alt="Group" />}
-              title="Dragon City"
-            /> 
+          <LinkNavigation
+            icon={<img className="groupIcon" src={group4Img} alt="Group" />}
+            title="Dragon City"
+          /> 
 
-            <LinkNavigation
-              icon={<img className="groupIcon" src={group5Img} alt="Group" />}
-              title="N.W.A"
-            />  
-          </LinkList>
+          <LinkNavigation
+            icon={<img className="groupIcon" src={group5Img} alt="Group" />}
+            title="N.W.A"
+          />  
         </NavSection>
-      </LeftNavigation>
+      </SideNavigation>
 
       <section className="feed">
         <PostInput />
+
+        <PostWrapper>
+          <button className="createRoomButton">
+            <img src={createRoomIcon} alt="Create room" /> Create room
+          </button>
+        </PostWrapper>
       </section>
+
+      <SideNavigation>
+        <NavSection title="Sponsored" divider>
+          <LinkNavigation
+            icon={<img src={ads1Img} alt="Ads" className="imgAds" />}
+            title="Scale up for success"
+            description="upwork.com"
+          />
+
+          <LinkNavigation
+            icon={<img src={ads2Img} alt="Ads" className="imgAds" />}
+            title="Elite Software engineer Wanted"
+            description="developers.turing.com"
+          />
+        </NavSection>
+
+        <NavSection title="Contacts">
+          <LinkNavigation
+            icon={<ProfileIcon src={profilePic2} />}
+            title="Jhon Doe"
+          />
+
+          <LinkNavigation
+            icon={<ProfileIcon src={profilePic2} />}
+            title="Jhon Doe"
+          />
+
+          <LinkNavigation
+            icon={<ProfileIcon src={profilePic2} />}
+            title="Jhon Doe"
+          />
+
+          <LinkNavigation
+            icon={<ProfileIcon src={profilePic2} />}
+            title="Jhon Doe"
+          />
+
+          <LinkNavigation
+            icon={<ProfileIcon src={profilePic2} />}
+            title="Jhon Doe"
+          />
+        </NavSection>
+
+        <NavSection title="Group conversations">
+          <LinkNavigation 
+            icon={
+              <IconWrapper>
+                <img 
+                  src={plusIcon} 
+                  alt="Add groups" 
+                  style={{ filter: 'var(--filter-primary-icon)' }}
+                />
+              </IconWrapper>
+            }
+            title="Create new group"
+          />
+        </NavSection>
+      </SideNavigation>
     </div>
 
   </Container>
