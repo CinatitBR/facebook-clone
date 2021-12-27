@@ -125,7 +125,7 @@ const App = () => (
         </PostWrapper>
 
         <PostUser 
-          postData={{
+          data={{
             creatorName: 'UFC',
             profileImageSrc: profilePic3,
             createdAt: 'Yesterday at 8:20 PM',

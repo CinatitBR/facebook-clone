@@ -1,5 +1,6 @@
 import { ProfileIcon } from '../Icons/Icons'
 import InputComment from '../InputComment/InputComment'
+import UserComment from '../UserComment/UserComment'
 
 import {ReactComponent as PublicIcon} from '../../assets/public-icon.svg'
 import {ReactComponent as LikeColoredSvg } from '../../assets/like-colored.svg'
@@ -8,6 +9,7 @@ import likeImg from '../../assets/like-icon.png'
 import commentImg from '../../assets/comment-icon.png'
 import shareImg from '../../assets/share-icon.png'
 import verifiedIcon from '../../assets/verified-icon.png'
+import authorPic from '../../assets/author-pic.jpg'
 
 import { 
   Container, 
@@ -18,11 +20,12 @@ import {
   BadgeIcon,
   TextWrapper,
   Footer,
-  SelectFilter
+  SelectFilter,
+  CommentList
 } from './PostUser.styles'
 
 interface Props {
-  postData: {
+  data: {
     profileImageSrc: string,
     creatorName: string,
     verified: boolean,
@@ -37,25 +40,25 @@ interface Props {
 }
 
 const PostUser = ({ 
-  postData
+  data
 }: Props) => (
   <Container>
     <PostUserHeader className="margin">
-      <ProfileIcon src={postData.profileImageSrc} />
+      <ProfileIcon src={data.profileImageSrc} />
 
       <div className="info">
         <div className="top">
           <span className="creator">
-            <a href="#">{postData.creatorName}</a>
+            <a href="#">{data.creatorName}</a>
           </span>
 
-          {postData.verified && 
+          {data.verified && 
             <BadgeIcon src={verifiedIcon} alt="Verified" />
           }
         </div>
 
         <div className="bottom">
-          <a href="#">{postData.createdAt}</a> · {!postData.isPrivate && 
+          <a href="#">{data.createdAt}</a> · {!data.isPrivate && 
             <PublicIcon fill="var(--secondary-icon)" />
           }
         </div>
@@ -63,24 +66,24 @@ const PostUser = ({
     </PostUserHeader>
 
     <TextWrapper className="margin">
-      {postData.text}
+      {data.text}
     </TextWrapper>
     
-    {postData.postImageSrc &&
+    {data.postImageSrc &&
       <PostImageWrapper href="#">
-        <img src={postData.postImageSrc} alt="Post" />
+        <img src={data.postImageSrc} alt="Post" />
       </PostImageWrapper>
     }
 
     <PostInfo className="margin divider">
       <div className="content">
         <div className="left">
-          <LikeColoredSvg width={18} /> <span>{postData.likeCount}</span>
+          <LikeColoredSvg width={18} /> <span>{data.likeCount}</span>
         </div>
 
         <div className="right">
-          <span className="commentCount">{postData.commentCount} comments</span>
-          <span className="shareCount">{postData.shareCount} shares</span>
+          <span className="commentCount">{data.commentCount} comments</span>
+          <span className="shareCount">{data.shareCount} shares</span>
         </div>
       </div>
     </PostInfo>
@@ -106,6 +109,18 @@ const PostUser = ({
 
       <InputComment placeholder="Write a comment..." />
       <span className="seeMore">View comments</span>
+
+      <CommentList>
+        <UserComment 
+          data={{
+            authorName: "Luis Henrique",
+            authorPicSrc: authorPic,
+            likeCount: 46,
+            text: 'Ja acho que Cyborg leva',
+            createdAt: '2d'
+          }} 
+        />
+      </CommentList>
     </Footer>
   </Container>
 )
