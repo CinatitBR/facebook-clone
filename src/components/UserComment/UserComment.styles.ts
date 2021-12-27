@@ -41,8 +41,10 @@ export const LikeCountWrapper = styled.div`
   padding: 2px;
   border-radius: 10px;
   box-shadow: 0 1px 3px 0 var(--shadow-2);
+  cursor: pointer;
 
   display: flex;
+  flex-direction: row;
   place-items: center;
   gap: 4px;
 
@@ -61,4 +63,9 @@ export const ActionButtons = styled.div`
   color: var(--secondary-text);
   font-size: 12px;
   margin-left: 12px;
+
+  span:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
 `
