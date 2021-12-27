@@ -1,7 +1,10 @@
-import styled from "styled-components";
+import styled, { css } from 'styled-components'
 
-export const Container = styled.article`
+export const Container = styled.article<{ level: number }>`
   width: 100%;
+  padding-top: 4px;
+  padding-left: 16px;
+  position: relative;
 
   display: flex;
   flex-direction: row;
@@ -10,13 +13,68 @@ export const Container = styled.article`
   .right {
     max-width: calc(100% - 26px);
   }
+
+  ${props => props.level > 1 && css`
+    padding-left: 54px;
+
+    .profileIcon {
+      padding-left: 6px;
+      margin-top: 8px;
+    }
+  `}
 `
 
-export const Content = styled.div`
+export const ThreadMain = styled.div`
+  background-color: var(--comment-background);
+  display: block;
+  width: 2px;
+  height: 100%;
+
+  position: absolute;
+  left: 30px;
+`
+
+export const ThreadLeft = styled.div<{ subComment?: boolean }>`
+  display: none;
+  display: block;
+  width: 24px;
+  height: 20px;
+
+  border-bottom-left-radius: 10px;
+  border-bottom-width: 2px;
+  border-bottom-style: solid;
+  border-top-color: var(--comment-background);
+  border-right-color: var(--comment-background);
+  border-left-style: solid;
+  border-left-color: var(--comment-background);
+  border-bottom-color: var(--comment-background);
+  border-left-width: 2px;
+
+  position: absolute;
+  left: 30px;
+`
+
+export const ThreadBottom = styled.div<{ subComment?: boolean }>`
+  display: none;
+  background-color: var(--comment-background);
+
+  display: block;
+  width: 2px;
+  height: 100%;
+
+  position: absolute;
+  left: 30px;
+  top: 43px;
+  /* left: 71px; */
+  /* top: 40px; */
+`
+
+export const Content = styled.div<{ subComment?: boolean }>`
   background-color: var(--comment-background);
   border-radius: 18px;
   color: var(--primary-text);
   padding: 8px 12px;
+
   position: relative;
 `
 

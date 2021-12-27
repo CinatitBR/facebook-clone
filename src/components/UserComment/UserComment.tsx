@@ -7,22 +7,36 @@ import {
   AuthorName,
   TextWrapper,
   LikeCountWrapper,
-  ActionButtons
+  ActionButtons,
+  ThreadMain,
+  ThreadLeft,
+  ThreadBottom
 } from './UserComment.styles'
 
-interface Props {
+export type Props = {
   data: {
     authorPicSrc: string,
     authorName: string,
     text: string,
     likeCount: number,
     createdAt: string
-  }
-}
+  },
+  level?: 0 | 1 | 2 | 3 | 4
+} 
 
-const UserComment = ({ data }: Props) => (
-  <Container>
-    <ProfileIcon src={data.authorPicSrc} />
+const UserComment = ({ data, level = 0 }: Props) => {
+  const size = (level >= 2) ? 24 : 32
+
+  return <Container level={level}>
+    {(level >= 2 && level < 4) && <ThreadMain />}
+    {(level >= 2) && <ThreadLeft />}
+    {(level >= 1 && level < 3) && <ThreadBottom />}
+
+    <ProfileIcon 
+      src={data.authorPicSrc} 
+      className="profileIcon" 
+      size={size}
+    />
 
     <div className="right">
       <Content>
@@ -42,7 +56,7 @@ const UserComment = ({ data }: Props) => (
       </ActionButtons>
     </div>
   </Container>
-)
+}
 
 
 export default UserComment
