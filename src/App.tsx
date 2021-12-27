@@ -125,12 +125,18 @@ const App = () => (
         </PostWrapper>
 
         <PostUser 
-          creator="UFC"
-          profileImageSrc={profilePic3}
-          createdAt="Yesterday at 8:20 PM"
-          text="Se você pudessse pedir uma luta de presente de Natal, qual seria?"
-          postImageSrc={postImage1}
-          verified
+          postData={{
+            creatorName: 'UFC',
+            profileImageSrc: profilePic3,
+            createdAt: 'Yesterday at 8:20 PM',
+            text: 'Se você pudessse pedir uma luta de presente de Natal, qual seria?',
+            postImageSrc: postImage1,
+            verified: true,
+            isPrivate: false,
+            likeCount: 528,
+            commentCount: 721,
+            shareCount: 12
+          }}
         />
       </Feed>
       

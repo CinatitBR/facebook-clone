@@ -4,6 +4,7 @@ import {ReactComponent as LikeColoredSvg } from '../../assets/like-colored.svg'
 import { ReactComponent as SortDownSvg } from '../../assets/sort-down-icon.svg'
 import likeImg from '../../assets/like-icon.png'
 import commentImg from '../../assets/comment-icon.png'
+import shareImg from '../../assets/share-icon.png'
 import verifiedIcon from '../../assets/verified-icon.png'
 import profilePic from '../../assets/profile-pic.jpg'
 import { IconWrapper } from '../Icons/Icons'
@@ -27,13 +28,18 @@ import {
 } from './PostUser.styles'
 
 interface Props {
-  profileImageSrc: string,
-  creator: string,
-  verified?: boolean,
-  createdAt: string,
-  isPrivate?: string,
-  text: string,
-  postImageSrc?: string
+  postData: {
+    profileImageSrc: string,
+    creatorName: string,
+    verified: boolean,
+    createdAt: string,
+    isPrivate: boolean,
+    text: string,
+    postImageSrc?: string,
+    likeCount: number,
+    commentCount: number,
+    shareCount: number
+  }
 }
 
 const InputCommentButton = ({ iconSrc, alt }: { iconSrc: string, alt: string }) => (
@@ -49,31 +55,25 @@ const InputCommentButton = ({ iconSrc, alt }: { iconSrc: string, alt: string }) 
 )
 
 const PostUser = ({ 
-  profileImageSrc, 
-  creator, 
-  verified, 
-  createdAt, 
-  isPrivate, 
-  text,
-  postImageSrc
-} : Props) => (
+  postData
+}: Props) => (
   <Container>
     <PostUserHeader className="margin">
-      <ProfileIcon src={profileImageSrc} />
+      <ProfileIcon src={postData.profileImageSrc} />
 
       <div className="info">
         <div className="top">
           <span className="creator">
-            <a href="#">{creator}</a>
+            <a href="#">{postData.creatorName}</a>
           </span>
 
-          {verified && 
+          {postData.verified && 
             <BadgeIcon src={verifiedIcon} alt="Verified" />
           }
         </div>
 
         <div className="bottom">
-          <a href="#">{createdAt}</a> · {!isPrivate && 
+          <a href="#">{postData.createdAt}</a> · {!postData.isPrivate && 
             <PublicIcon fill="var(--secondary-icon)" />
           }
         </div>
@@ -81,24 +81,24 @@ const PostUser = ({
     </PostUserHeader>
 
     <TextWrapper className="margin">
-      {text}
+      {postData.text}
     </TextWrapper>
     
-    {postImageSrc &&
+    {postData.postImageSrc &&
       <PostImageWrapper href="#">
-        <img src={postImageSrc} alt="Post" />
+        <img src={postData.postImageSrc} alt="Post" />
       </PostImageWrapper>
     }
 
     <PostInfo className="margin divider">
       <div className="content">
         <div className="left">
-          <LikeColoredSvg width={18} /> <span>528</span>
+          <LikeColoredSvg width={18} /> <span>{postData.likeCount}</span>
         </div>
 
         <div className="right">
-          <span className="commentCount">721 comments</span>
-          <span className="shareCount">12 shares</span>
+          <span className="commentCount">{postData.commentCount} comments</span>
+          <span className="shareCount">{postData.shareCount} shares</span>
         </div>
       </div>
     </PostInfo>
@@ -109,11 +109,11 @@ const PostUser = ({
       </button>
 
       <button>
-        <img src={commentImg} alt="Like" /> Like
+        <img src={commentImg} alt="Comment" /> Comment
       </button>
 
       <button>
-        <img src={likeImg} alt="Like" /> Like
+        <img src={shareImg} alt="Share" /> Share
       </button>
     </ActionButtons>
 
