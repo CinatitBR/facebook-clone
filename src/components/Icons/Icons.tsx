@@ -5,11 +5,12 @@ export interface Props {
   src: string
   size?: number,
   lastSeen?: string,
-  online?: boolean
+  online?: boolean,
+  className?: string
 }
 
-export const ProfileIcon = ({ src, size = 36, lastSeen, online } : Props) => (
-  <ProfileContainer>
+export const ProfileIcon = ({ src, size = 36, lastSeen, online, className } : Props) => (
+  <ProfileContainer className={className}>
     <img 
       src={src} 
       alt="Profile pic" 
