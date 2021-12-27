@@ -9,50 +9,53 @@ import {
   LikeCountWrapper,
   ActionButtons,
   ThreadMain,
+  ThreadSubMain,
   ThreadLeft,
   ThreadBottom
 } from './UserComment.styles'
 
 export type Props = {
-  data: {
+  comment: {
     authorPicSrc: string,
     authorName: string,
     text: string,
     likeCount: number,
-    createdAt: string
-  },
-  level?: 0 | 1 | 2 | 3 | 4
+    createdAt: string,
+    level: 0 | 1 | 2 | 3 | 4
+  }
 } 
 
-const UserComment = ({ data, level = 0 }: Props) => {
-  const size = (level >= 2) ? 24 : 32
+const UserComment = ({ comment }: Props) => {
+  const size = (comment.level >= 2) ? 24 : 32
 
-  return <Container level={level}>
-    {(level >= 2 && level < 4) && <ThreadMain />}
-    {(level >= 2) && <ThreadLeft />}
-    {(level >= 1 && level < 3) && <ThreadBottom />}
+  return <Container level={comment.level}>
+    {(comment.level >= 2 && comment.level < 4) && <ThreadMain level={comment.level} />}
+    {(comment.level === 3) && <ThreadSubMain level={comment.level} />}
+    {(comment.level >= 2) && <ThreadLeft level={comment.level} />}
+    {(comment.level >= 1 && comment.level < 3) && <ThreadBottom level={comment.level} />}
+
 
     <ProfileIcon 
-      src={data.authorPicSrc} 
+      src={comment.authorPicSrc} 
       className="profileIcon" 
       size={size}
     />
 
     <div className="right">
       <Content>
-        <AuthorName>{data.authorName}</AuthorName>
+        <AuthorName>{comment.authorName}</AuthorName>
 
-        <TextWrapper>{data.text}</TextWrapper>
+        <TextWrapper>{comment.text}</TextWrapper>
 
         <LikeCountWrapper>
-          <LikeColoredSvg /> <span>{data.likeCount}</span>
+          <LikeColoredSvg /> <span>{comment.likeCount}</span>
         </LikeCountWrapper>
       </Content>
 
       <ActionButtons>
         <span>Like</span>&nbsp;·&nbsp;
         <span>Reply</span>&nbsp;·&nbsp;
-        <span style={{ fontWeight: 400 }}>{data.createdAt}</span>
+        <span style={{ fontWeight: 400 }}>{comment.createdAt}</span>
       </ActionButtons>
     </div>
   </Container>
