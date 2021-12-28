@@ -96,4 +96,5 @@ export const ThreadLineBottom = styled.div<{ level: number }>`
 export const Child = styled.div`
   padding-left: 6px;
   margin-top: 8px;
+  width: 100%;
 `
