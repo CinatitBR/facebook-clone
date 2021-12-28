@@ -22,18 +22,18 @@ export type Props = {
     likeCount: number,
     createdAt: string,
     level: 0 | 1 | 2 | 3 | 4
-  }
+  },
+  last?: boolean
 } 
 
-const UserComment = ({ comment }: Props) => {
+const UserComment = ({ comment, last }: Props) => {
   const size = (comment.level >= 2) ? 24 : 32
 
   return <Container level={comment.level}>
     {(comment.level >= 2 && comment.level < 4) && <ThreadMain level={comment.level} />}
-    {(comment.level === 3) && <ThreadSubMain level={comment.level} />}
+    {(comment.level === 3 && !last) && <ThreadSubMain level={comment.level} />}
     {(comment.level >= 2) && <ThreadLeft level={comment.level} />}
-    {(comment.level >= 1 && comment.level < 3) && <ThreadBottom level={comment.level} />}
-
+    {(comment.level >= 1 && comment.level < 3 && !last) && <ThreadBottom level={comment.level} />}
 
     <ProfileIcon 
       src={comment.authorPicSrc} 
