@@ -2,9 +2,9 @@ import styled, { css } from 'styled-components'
 
 export const Container = styled.article<{ level: number }>`
   width: 100%;
-  padding-top: 4px;
   padding-left: 16px;
   position: relative;
+  overflow: hidden;
 
   display: flex;
   flex-direction: row;
