@@ -21,10 +21,11 @@ const InputButton = ({ iconSrc, alt }: { iconSrc: string, alt: string }) => (
   </IconWrapper>  
 )
 
-const InputComment = ({ placeholder }: { placeholder: string }) => (
+const InputComment = ({ placeholder, picSize = 32 }: { placeholder: string, picSize?: number }) => (
   <Container>
     <ProfileIcon 
       src={profilePic}
+      size={picSize}
       online
     />
 
