@@ -23,10 +23,8 @@ export type Props = {
 } 
 
 const CommentPost = ({ comment, picSize = 32 }: Props) => {
-  // const picSize = (comment.level >= 2) ? 24 : 32
-
   return (
-    <Container level={comment.level}>
+    <Container>
       <ProfileIcon 
         src={comment.authorPicSrc} 
         className="profileIcon" 

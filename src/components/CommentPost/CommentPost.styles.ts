@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 
-export const Container = styled.article<{ level: number }>`
+export const Container = styled.article`
   width: 100%;
   position: relative;
 
@@ -11,14 +11,6 @@ export const Container = styled.article<{ level: number }>`
   .right {
     max-width: calc(100% - 26px);
   }
-
-  /* Comment level 2 or 3 */
-  ${props => props.level >= 2 && css`
-    .profileIcon {
-      padding-left: 6px;
-      margin-top: 8px;
-    }
-  `}
 `
 
 export const Content = styled.div`
