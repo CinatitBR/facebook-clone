@@ -25,7 +25,7 @@ export const Container = styled.article<{ level: number }>`
   `}
 `
 
-export const ThreadMain = styled.div<{ level: number }>`
+export const ThreadLineMain = styled.div<{ level: number }>`
   background-color: var(--comment-background);
   display: block;
   width: 2px;
@@ -35,7 +35,7 @@ export const ThreadMain = styled.div<{ level: number }>`
   left: 30px;
 `
 
-export const ThreadSubMain = styled.div<{ level: number }>`
+export const ThreadLineSubMain = styled.div<{ level: number }>`
   background-color: var(--comment-background);
   display: block;
   width: 2px;
@@ -45,7 +45,7 @@ export const ThreadSubMain = styled.div<{ level: number }>`
   left: 71px;
 `
 
-export const ThreadLeft = styled.div<{ level: number }>`
+export const ThreadLineLeft = styled.div<{ level: number }>`
   display: block;
   width: 24px;
   height: 20px;
@@ -73,7 +73,7 @@ export const ThreadLeft = styled.div<{ level: number }>`
   `}
 `
 
-export const ThreadBottom = styled.div<{ level: number }>`
+export const ThreadLineBottom = styled.div<{ level: number }>`
   display: block;
   width: 2px;
   height: 100%;

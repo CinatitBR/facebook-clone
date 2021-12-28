@@ -1,9 +1,9 @@
 import { 
   Container,
-  ThreadMain,
-  ThreadSubMain,
-  ThreadLeft,
-  ThreadBottom,
+  ThreadLineMain,
+  ThreadLineSubMain,
+  ThreadLineLeft,
+  ThreadLineBottom,
   Child
 } from './CommentThreadPostWrapper.styles'
 
@@ -15,10 +15,10 @@ export type Props = {
 
 const CommentThreadPostWrapper = ({ level, children, last }: Props) => {
   return <Container level={level}>
-    {(level >= 2 && level < 4) && <ThreadMain level={level} />}
-    {(level === 3 && !last) && <ThreadSubMain level={level} />}
-    {(level >= 2) && <ThreadLeft level={level} />}
-    {(level >= 1 && level < 3 && !last) && <ThreadBottom level={level} />}
+    {(level >= 2 && level < 4) && <ThreadLineMain level={level} />}
+    {(level === 3 && !last) && <ThreadLineSubMain level={level} />}
+    {(level >= 2) && <ThreadLineLeft level={level} />}
+    {(level >= 1 && level < 3 && !last) && <ThreadLineBottom level={level} />}
 
     <Child>
       {children}
