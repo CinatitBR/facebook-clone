@@ -45,7 +45,11 @@ const CommentThread = ({ commentThread }: Props) => {
         )
       })}
 
-      <CommentThreadPostWrapper level={2} last={true}>
+      <CommentThreadPostWrapper 
+        level={2} 
+        last={true} 
+        threadLineMain={false}
+      >
         <InputComment 
           placeholder={`Reply to ${commentThread[0].authorName}`} 
           picSize={24}
