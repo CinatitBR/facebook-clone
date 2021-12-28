@@ -1,6 +1,6 @@
 import { ProfileIcon } from '../Icons/Icons'
 import InputComment from '../InputComment/InputComment'
-import UserComment from '../UserComment/UserComment'
+import CommentThread from '../CommentThread/CommentThread'
 
 import {ReactComponent as PublicIcon} from '../../assets/public-icon.svg'
 import {ReactComponent as LikeColoredSvg } from '../../assets/like-colored.svg'
@@ -38,6 +38,57 @@ interface Props {
     shareCount: number
   }
 }
+
+const commentThread = [
+  {
+    authorName: 'Bruno Oliveira',
+    authorPicSrc: authorPic,
+    likeCount: 46,
+    text: 'Nunes x Cyborg',
+    createdAt: '2d',
+    level: 1 as const
+  },
+  {
+    authorName: 'Castor dinâmico',
+    authorPicSrc: authorPic,
+    likeCount: 46,
+    text: 'Que batalha ia ser, mas acho a Amanda sairia com a vitória.',
+    createdAt: '1d',
+    level: 2 as const
+  },
+  {
+    authorName: 'Luis henrique',
+    authorPicSrc: authorPic,
+    likeCount: 46,
+    text: 'A não sei não em, mas daria uma boa luta',
+    createdAt: '2d',
+    level: 2 as const
+  },
+  {
+    authorName: 'Tadeu Alcântara kkkkk',
+    authorPicSrc: authorPic,
+    likeCount: 46,
+    text: 'acredito que numa revanche, Ciborg acabaria com a Amanda, protegida do Dana ....',
+    createdAt: '2d',
+    level: 3 as const
+  },
+  {
+    authorName: 'Mais Um Nome Aleatório',
+    authorPicSrc: authorPic,
+    likeCount: 46,
+    text: 'Não sei ainda',
+    createdAt: '2d',
+    level: 3 as const
+  },
+  {
+    authorName: 'Igão da silva',
+    authorPicSrc: authorPic,
+    likeCount: 46,
+    text: 'Esse seria o último',
+    createdAt: '2d',
+    level: 3 as const
+  }
+]
 
 const PostUser = ({ 
   data
@@ -109,19 +160,13 @@ const PostUser = ({
 
       <InputComment placeholder="Write a comment..." />
       <span className="seeMore">View comments</span>
-
-      <CommentList>
-        <UserComment 
-          data={{
-            authorName: "Luis Henrique",
-            authorPicSrc: authorPic,
-            likeCount: 46,
-            text: 'Ja acho que Cyborg leva',
-            createdAt: '2d'
-          }} 
-        />
-      </CommentList>
     </Footer>
+
+    <CommentList>
+      <CommentThread
+        commentThread={commentThread}
+      />
+    </CommentList>
   </Container>
 )
 
