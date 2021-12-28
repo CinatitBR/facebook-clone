@@ -1,5 +1,4 @@
-// import UserComment, { Props as UserCommentProps } from '../UserComment/UserComment'
-import UserComment from '../UserComment/UserComment'
+import CommentThreadPostWrapper from '../CommentThreadPostWrapper/CommentThreadPostWrapper'
 import CommentPost, { Props as UserCommentProps } from '../CommentPost/CommentPost'
 import InputComment from '../InputComment/InputComment'
 
@@ -34,7 +33,7 @@ const CommentThread = ({ commentThread }: Props) => {
         }
 
         return (
-          <UserComment 
+          <CommentThreadPostWrapper 
             level={comment.level}
             last={last}
           >
@@ -42,16 +41,16 @@ const CommentThread = ({ commentThread }: Props) => {
               comment={comment}
               picSize={picSize}
             />
-          </UserComment>
+          </CommentThreadPostWrapper>
         )
       })}
 
-      <UserComment level={2} last={true}>
+      <CommentThreadPostWrapper level={2} last={true}>
         <InputComment 
           placeholder={`Reply to ${commentThread[0].authorName}`} 
           picSize={24}
         />
-      </UserComment>
+      </CommentThreadPostWrapper>
     </Container>
   )
 }

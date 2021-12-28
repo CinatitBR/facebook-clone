@@ -5,7 +5,7 @@ import {
   ThreadLeft,
   ThreadBottom,
   Child
-} from './UserComment.styles'
+} from './CommentThreadPostWrapper.styles'
 
 export type Props = {
   level: 0 | 1 | 2 | 3 | 4
@@ -13,7 +13,7 @@ export type Props = {
   last: boolean
 } 
 
-const UserComment = ({ level, children, last }: Props) => {
+const CommentThreadPostWrapper = ({ level, children, last }: Props) => {
   return <Container level={level}>
     {(level >= 2 && level < 4) && <ThreadMain level={level} />}
     {(level === 3 && !last) && <ThreadSubMain level={level} />}
@@ -27,4 +27,4 @@ const UserComment = ({ level, children, last }: Props) => {
 }
 
 
-export default UserComment
+export default CommentThreadPostWrapper
