@@ -1,4 +1,8 @@
-import UserComment, { Props as UserCommentProps } from '../UserComment/UserComment'
+// import UserComment, { Props as UserCommentProps } from '../UserComment/UserComment'
+import UserComment from '../UserComment/UserComment'
+import CommentPost, { Props as UserCommentProps } from '../CommentPost/CommentPost'
+import InputComment from '../InputComment/InputComment'
+
 import { Container } from './CommentThread.styles'
 
 type Props = {
@@ -11,6 +15,7 @@ const CommentThread = ({ commentThread }: Props) => {
       {commentThread.map((comment, index) => {
         let last: boolean = false
 
+        const picSize = (comment.level >= 2) ? 24 : 32
         const threadLength = commentThread.length
         const lastIndex = threadLength - 1
         const nextComment = commentThread[index + 1]
@@ -30,11 +35,23 @@ const CommentThread = ({ commentThread }: Props) => {
 
         return (
           <UserComment 
-            comment={comment}
+            level={comment.level}
             last={last}
-          />
+          >
+            <CommentPost 
+              comment={comment}
+              picSize={picSize}
+            />
+          </UserComment>
         )
       })}
+
+      <UserComment level={2} last={true}>
+        <InputComment 
+          placeholder={`Reply to ${commentThread[0].authorName}`} 
+          picSize={24}
+        />
+      </UserComment>
     </Container>
   )
 }
